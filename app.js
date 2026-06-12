@@ -2,6 +2,7 @@ let stages = [];
 
 const pipelineContainer = document.getElementById("pipelineContainer");
 const addStageBtn = document.getElementById("addStageBtn");
+const yamlOutput = document.getElementById("yamlOutput");
 
 addStageBtn.addEventListener("click", () => {
 
@@ -49,6 +50,7 @@ function renderPipeline() {
 
         pipelineContainer.appendChild(stageDiv);
     });
+    yamlOutput.value = generateYaml(stages);
 }
 
 function deleteStage(index) {
